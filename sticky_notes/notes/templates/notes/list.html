@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Sticky Notes{% endblock %}
+{% block content %}
+
+<div class="container">
+
+    <div class="page-header">
+        <h1>My Sticky Notes</h1>
+        <a href="{% url 'create_note' %}" class="add-note-btn">+ New Note</a>
+    </div>
+
+    <div class="notes-board">
+        {% for note in notes %}
+
+        <div class="sticky-note" style="background-color: {{ note.color }}; ">
+
+            <div class="note-header">
+                {{note.title}}
+                <div class="note-actions">
+                <a href="{% url 'edit_note' note.id %}" class="btn btn-primary" title="Edit this Note">
+                        📝
+                    </a>
+                <form method="post" action="{% url 'delete_note' note.id %}" title="Delete this Note">
+                    {% csrf_token %}
+                    <button type="submit" class="delete-btn">
+                        🗑️ 
+                    </button>
+                </form>
+                </div>
+            </div>
+
+            <div class="note-body">
+            {{ note.content }}
+            </div>
+            <div class="note-footer">
+                Created on:
+            {{note.created_at|date:"F d, Y"}}
+            </div>
+        </div>
+        {% empty %}
+            <p>No notes yet.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

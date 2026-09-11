@@ -1,0 +1,104 @@
+/* General Page Styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Page Header */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.page-header h1 {
+    margin: 0;
+}
+
+/* New Note Button */
+.add-note-btn {
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.add-note-btn:hover {
+    background-color: #45a049;
+}
+
+/* Notes Container */
+.notes-board {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Individual Sticky Note */
+.sticky-note {
+    width: 250px;
+    min-height: 180px;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.sticky-note:hover {
+    transform: rotate(-1deg) scale(1.02);
+}
+
+/* Note Header */
+.note-header {
+    display: flex;
+   /* justify-content: flex-end; */
+    justify-content: space-between;
+}
+
+.note-title {
+    display: flex;
+    justify-content: flex-start;
+    font-style: italic
+}
+
+/* Delete Button */
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0;
+}
+
+.delete-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Note Content */
+.note-body {
+    margin-top: 10px;
+    font-size: 32px;
+}
+
+.note-body h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.note-body p {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Empty Notes Message */
+.empty-message {
+    color: #666;
+    font-style: italic;
+}
